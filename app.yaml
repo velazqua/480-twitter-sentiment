@@ -1,0 +1,27 @@
+application: 480-twitter-sentiment
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+- url: /stylesheets
+  static_dir: css
+
+- url: /css
+  static_dir: css
+
+- url: /js
+  static_dir: js
+
+- url: /font-awesome
+  static_dir: font-awesome
+
+- url: /.*
+  script: 480-twitter-sentiment.application
+
+libraries:
+- name: webapp2
+  version: latest
+- name: jinja2
+  version: latest
